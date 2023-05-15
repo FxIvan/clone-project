@@ -1,9 +1,10 @@
+import { Container } from "react-bootstrap";
 import Layout from "../../component/layout";
 
 export default () => {
   return (
-    <Layout page="Projectos">
+    <Container>
       <h1>ProjectLayout</h1>
-    </Layout>
+    </Container>
   );
 };

@@ -1,7 +1,9 @@
-export const StakingLayout = () => {
+import { Container } from "react-bootstrap";
+
+export default () => {
   return (
-    <div>
+    <Container>
       <h1>StakingLayout</h1>
-    </div>
+    </Container>
   );
 };
