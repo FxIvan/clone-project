@@ -1,7 +1,12 @@
-export default () => {
+import Layout from "../component/layout";
+import Projects from "./projects";
+
+export default function Home() {
   return (
-    <div>
-      <h1>Page Principal</h1>
-    </div>
+    <>
+        <Layout>
+            <h1>Hola</h1>
+        </Layout>
+    </>
   );
-};
+}
