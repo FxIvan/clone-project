@@ -1,0 +1,18 @@
+.containerButton button {
+  color: #fff;
+  font-weight: bold;
+  font-weight: 500;
+  padding: 10px 20px;
+}
+
+.containerButton button:hover {
+  color: white;
+  -webkit-box-shadow: 4px 3px 58px -7px rgba(252, 252, 252, 1);
+  -moz-box-shadow: 4px 3px 58px -7px rgba(252, 252, 252, 1);
+  box-shadow: 4px 3px 58px -7px rgba(252, 252, 252, 1);
+}
+
+.gateIo {
+  background-color: #004655;
+  border-color: #004655;
+}

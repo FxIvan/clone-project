@@ -3,6 +3,7 @@ import Layout from "../component/layout";
 import videoBackground from "../public/video/redLazos.mp4";
 import styles from "./styles.module.css";
 import HomeBanner from "../component/app/homeBanner";
+import HomeButton from "../component/app/homeButton";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Container className={styles.containerLanding}>
         <div>
           <HomeBanner />
+          <HomeButton />
         </div>
       </Container>
     </Container>
