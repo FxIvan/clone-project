@@ -8,6 +8,7 @@ export default function Layout({ children, page }) {
       <Head>
         <title>{page}</title>
       </Head>
+
       <NavBar />
       {children}
       <Footer />

@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <Container>
         <Row className={styles.listFooter}>
           <ul>
