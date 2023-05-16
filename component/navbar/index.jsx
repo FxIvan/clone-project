@@ -34,7 +34,7 @@ export default function NavBar() {
               <Col md={3} className="d-flex justify-content-center">
                 <Button
                   variant="warning"
-                  className="d-flex align-items-center w-100 justify-content-center"
+                  className="d-flex align-items-center w-100 justify-content-center rounded-pill"
                 >
                   <FontAwesomeIcon icon={faWallet} className="pe-2" />
                   Warning
@@ -43,7 +43,7 @@ export default function NavBar() {
               <Col md={3} className="d-flex justify-content-center">
                 <Button
                   variant="warning"
-                  className="d-flex align-items-center  w-100 justify-content-center"
+                  className="d-flex align-items-center  w-100 justify-content-center rounded-pill"
                 >
                   <FontAwesomeIcon icon={faFire} className="pe-2" />
                   Projects
@@ -52,7 +52,7 @@ export default function NavBar() {
               <Col md={3} className="d-flex justify-content-center">
                 <Button
                   variant="warning"
-                  className="d-flex align-items-center  w-100 justify-content-center"
+                  className="d-flex align-items-center  w-100 justify-content-center rounded-pill"
                 >
                   <FontAwesomeIcon icon={faTape} className="pe-2" />
                   Staking
@@ -69,7 +69,7 @@ export default function NavBar() {
                 </Button>
               </Col>
               <Col md={1} className="d-flex justify-content-center">
-                <Button variant="warning" className="d-flex align-items-center">
+                <Button variant="warning" className="d-flex align-items-center rounded-pill">
                   EN
                   <FontAwesomeIcon icon={faAngleDown} className="ps-1" />
                 </Button>
