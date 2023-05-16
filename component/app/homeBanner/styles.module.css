@@ -1,0 +1,16 @@
+.containerHomeBanner{
+    padding-top: 8rem;
+}
+.containerTitleAndP h1{
+    font-weight: bold;
+    color: #c0c0c0;
+    margin-bottom: 1.5rem;
+}
+
+.containerTitleAndP p{
+    color: #c0c0c0;
+    margin-bottom: 1.5rem;
+    opacity: .6;
+    font-size: 20px;
+    width: 65%;
+}
