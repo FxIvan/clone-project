@@ -4,6 +4,7 @@ import videoBackground from "../public/video/redLazos.mp4";
 import styles from "./styles.module.css";
 import HomeBanner from "../component/app/homeBanner";
 import HomeButton from "../component/app/homeButton";
+import ProfileButton from "../component/app/profileButton";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <div>
           <HomeBanner />
           <HomeButton />
+          <ProfileButton />
         </div>
       </Container>
     </Container>
