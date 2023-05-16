@@ -5,6 +5,7 @@ import styles from "./styles.module.css";
 import HomeBanner from "../component/app/homeBanner";
 import HomeButton from "../component/app/homeButton";
 import ProfileButton from "../component/app/profileButton";
+import OurPartners from "../component/app/ourPartners";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
           <HomeBanner />
           <HomeButton />
           <ProfileButton />
+          <OurPartners />
         </div>
       </Container>
     </Container>
