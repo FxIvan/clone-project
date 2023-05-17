@@ -4,13 +4,12 @@
   color: #c0c0c0;
 }
 .spinnerContainer {
-  position: absolute;
-  left: 34%;
-  top: -10%;
+  margin: auto;
 }
 .spinnerBlock {
   width: 350px;
   height: 350px;
+  margin: auto;
 }
 .spinnerBlock:nth-child(5n) {
   margin-right: 0px;
@@ -77,6 +76,9 @@
 }
 
 .contactInfo {
+  position: absolute;
+  top: 10%;
+  width: 100%;
   padding-top: 4rem;
   padding-bottom: 8rem;
 }
@@ -92,6 +94,6 @@
 }
 
 .contactInfo ul li a {
-  width: 15%;
+  width: 12%;
   text-align: start;
 }
