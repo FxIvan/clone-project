@@ -10,6 +10,7 @@ import AboutUs from "../component/app/aboutUs/aboutUs";
 import TieredSystem from "../component/app/tieredSystem";
 import RoundOne from "../component/app/roundOne";
 import RoundTwo from "../component/app/roundTwo";
+import VenturePartner from "../component/app/venturePartner";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
           <TieredSystem />
           <RoundOne />
           <RoundTwo />
+          <VenturePartner />
         </div>
       </Container>
     </Container>

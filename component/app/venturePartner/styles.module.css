@@ -1,0 +1,32 @@
+.titleVenturePartner h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #c0c0c0;
+}
+.containerPartners p {
+  font-size: 1.2rem;
+  color: #dfdfdf;
+  opacity: 0.6;
+}
+
+.buttonLearnMore {
+  background-color: transparent;
+  border-color: #f1b90c;
+  color: #f1b90c;
+}
+
+.buttonLearnMore:hover {
+  background-color: #f1b90c;
+  border-color: #f1b90c;
+  color: #ffffff;
+  -webkit-box-shadow: 4px 3px 58px -7px rgba(252, 252, 252, 1);
+  -moz-box-shadow: 4px 3px 58px -7px rgba(252, 252, 252, 1);
+  box-shadow: 4px 3px 58px -7px rgba(252, 252, 252, 1);
+}
+
+.blueZilla,
+.silkLegal {
+  background-color: #1f1f21;
+  border-radius: 4px;
+  min-height: 350px;
+}
