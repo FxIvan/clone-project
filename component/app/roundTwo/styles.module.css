@@ -1,0 +1,16 @@
+.titleTwoRound h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #c0c0c0;
+}
+.containerParagraph p,
+.roundTwoDescription p {
+  color: rgb(255 255 255 / 60%);
+}
+
+.roundTwoDescription strong {
+  color: rgba(252, 252, 252, 0.767);
+  font-size: 1rem;
+  font-weight: 500;
+  font-weight: bold;
+}

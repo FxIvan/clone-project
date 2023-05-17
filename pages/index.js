@@ -9,6 +9,7 @@ import OurPartners from "../component/app/ourPartners";
 import AboutUs from "../component/app/aboutUs/aboutUs";
 import TieredSystem from "../component/app/tieredSystem";
 import RoundOne from "../component/app/roundOne";
+import RoundTwo from "../component/app/roundTwo";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
           <AboutUs />
           <TieredSystem />
           <RoundOne />
+          <RoundTwo />
         </div>
       </Container>
     </Container>
