@@ -6,26 +6,26 @@ import Image from "next/image";
 export default function AboutUs() {
   return (
     <Container className="my-5">
-      <Row>
-        <h2 className="text-light">ABOUT US</h2>
+      <Row className={styles.titleAboutUs + " text-center my-5"}>
+        <h2 className="">ABOUT US</h2>
       </Row>
       <Row className="d-flex align-items-center">
-        <Col sm={6}>
+        <Col sm={6} className={styles.containerDescription}>
           <div>
-            <h4 className="text-light">WHAT IS BSCPAD?</h4>
+            <h4 className="">WHAT IS BSCPAD?</h4>
             <p className="text-light">
               <strong>
                 The BSC Launch Pad is the first decentralized IDO platform for
                 the Binance Smart Chain Network.
               </strong>
             </p>
-            <p className="text-light">
+            <p className="">
               BSCPad will empower crypto currency projects with the ability to
               distribute tokens and raise liquidity.
             </p>
           </div>
           <div>
-            <h4 className="text-light">WHY CHOOSE US?</h4>
+            <h4 className="">WHY CHOOSE US?</h4>
             <p className="text-light">
               <strong>
                 BSCPad has found a solution to incentivize and reward all token
@@ -33,7 +33,7 @@ export default function AboutUs() {
                 entry.
               </strong>
             </p>
-            <p className="text-light pb-2">
+            <p className="pb-2">
               The fundamental flaws of existing launchpads is that acquiring
               enough tokens to participate in the ecosystem is prohibitive, and
               even if you do stake the tokens, you are not guaranteed an
@@ -44,7 +44,7 @@ export default function AboutUs() {
               if you win the lottery you get a guaranteed allocation in the
               first round (Allocation round).
             </p>
-            <p className="text-light">
+            <p className="">
               The hallmark of the BSCPad is a two-round system that makes every
               tier level guaranteed an allocation. There is no first come first
               serve or bots; only fair distributed rewards for all participants.

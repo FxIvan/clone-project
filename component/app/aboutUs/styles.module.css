@@ -1,5 +1,28 @@
+.titleAboutUs h2{
+  font-size: 3rem;
+  font-weight: 700;
+  color: #c0c0c0;
+}
+
+.containerDescription h4{
+  font-size: 18px;
+  font-weight: 500;
+  color: #9c9c9c;
+}
+
+.containerDescription p strong{
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #c0c0c0;
+}
+.containerDescription p{
+  font-size: 16px;
+  font-weight: 500;
+  color: #9c9c9c;
+}
+
 .nkCircleAnimation {
-  border: 8px solid rgba(0, 0, 0, 0.1);
+  border: 12px solid rgba(0, 0, 0, 0.1);
   width: 500px;
   height: 500px;
   border-radius: 50%;
