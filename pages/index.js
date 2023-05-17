@@ -24,7 +24,7 @@ export default function Home() {
         className={styles.videoBackground + " w-100"}
       ></video>
       <Container className={styles.containerLanding}>
-        <div>
+        <div className="d-sm-none d-md-block d-md-none d-lg-block d-none d-sm-block d-lg-none d-xl-block">
           <HomeBanner />
           <HomeButton />
           <ProfileButton />

@@ -15,7 +15,7 @@ import {
 export default function NavBar() {
   return (
     <header>
-      <Container>
+      <Container className="d-sm-none d-md-block d-md-none d-lg-block d-none d-sm-block d-lg-none d-xl-block">
         <Row className="py-2">
           <Col xxl={5} lg={4} className="d-flex justify-content-start">
             <div className={styles.logo + " d-flex align-items-center"}>
