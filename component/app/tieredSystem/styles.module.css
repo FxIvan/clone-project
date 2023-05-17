@@ -1,0 +1,15 @@
+.containerTieredSystem h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #c0c0c0;
+}
+
+.paragraph{
+    width: 70%
+}
+
+.paragraph p{
+  font-size: 1.2rem;
+  color: #dfdfdf;
+  opacity: .6;
+}

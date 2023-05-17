@@ -7,6 +7,7 @@ import HomeButton from "../component/app/homeButton";
 import ProfileButton from "../component/app/profileButton";
 import OurPartners from "../component/app/ourPartners";
 import AboutUs from "../component/app/aboutUs/aboutUs";
+import TieredSystem from "../component/app/tieredSystem";
 
 export default function Home() {
   return (
@@ -24,7 +25,8 @@ export default function Home() {
           <HomeButton />
           <ProfileButton />
           <OurPartners />
-          <AboutUs/>
+          <AboutUs />
+          <TieredSystem />
         </div>
       </Container>
     </Container>
