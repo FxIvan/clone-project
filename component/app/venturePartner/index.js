@@ -31,6 +31,9 @@ export default function VenturePartner() {
             </Button>
           </div>
         </Col>
+        <Row className={styles.titleVenturePartner + " text-center mt-5"}>
+          <h2>LEGAL PARTNER</h2>
+        </Row>
         <Col sm={12} className="text-center my-5">
           <div className={styles.silkLegal + " p-4"}>
             <Image src={silkLegal} className="w-25 h-50" />
