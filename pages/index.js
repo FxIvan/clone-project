@@ -8,6 +8,7 @@ import ProfileButton from "../component/app/profileButton";
 import OurPartners from "../component/app/ourPartners";
 import AboutUs from "../component/app/aboutUs/aboutUs";
 import TieredSystem from "../component/app/tieredSystem";
+import RoundOne from "../component/app/roundOne";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           <OurPartners />
           <AboutUs />
           <TieredSystem />
+          <RoundOne />
         </div>
       </Container>
     </Container>

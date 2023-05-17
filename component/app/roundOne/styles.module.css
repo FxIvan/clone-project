@@ -1,0 +1,47 @@
+.titleRound h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #c0c0c0;
+}
+
+.containerCard {
+  background-color: rgb(31 31 33);
+  border-radius: 12px;
+  transition: transform 1s ease;
+}
+.containerCard:hover {
+  transform: scale(1.1);
+}
+#price {
+  font-size: 36px;
+}
+.divTitle {
+  border-bottom: 1px solid #9c9c9c;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.containerCard h3 {
+  color: #f1b90c;
+  font-weight: bold;
+}
+.containerList {
+  border-bottom: 1px solid #9c9c9c;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.containerList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.containerList ul li {
+  color: rgb(255 255 255 / 60%);
+}
+
+.containerList ul li span {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  font-weight: bold;
+}
