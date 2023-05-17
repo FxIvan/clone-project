@@ -1,0 +1,97 @@
+.titleContact h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #c0c0c0;
+}
+.spinnerContainer {
+  position: absolute;
+  left: 34%;
+  top: -10%;
+}
+.spinnerBlock {
+  width: 350px;
+  height: 350px;
+}
+.spinnerBlock:nth-child(5n) {
+  margin-right: 0px;
+}
+
+.spinner {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.spinner:before,
+.spinner:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 50%;
+}
+
+.spinnerOne:before {
+  width: 350px;
+  height: 350px;
+  border-bottom-color: #e0e0e0;
+  border-right-color: rgba(#e0e0e0, 0);
+  border-top-color: #e0e0e0;
+  border-left-color: rgba(#e0e0e0, 0);
+  top: 0px;
+  left: 0px;
+  animation: rotate-animation 14s linear 0s infinite;
+}
+
+.spinnerOne:after {
+  width: calc(300px - 4px * 2);
+  height: calc(300px - 4px * 2);
+  border-bottom-color: #e0e0e0;
+  border-right-color: rgba(#e0e0e0, 0);
+  border-top-color: #e0e0e0;
+  border-left-color: rgba(#e0e0e0, 0);
+  top: calc((370px - 300px - 4px * 2) / 2);
+  left: calc((370px - 305px - 4px * 2) / 2);
+  animation: anti-rotate-animation 8s linear 0s infinite;
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes anti-rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.contactInfo {
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+}
+.contactInfo ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactInfo ul li {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.contactInfo ul li a {
+  width: 15%;
+  text-align: start;
+}

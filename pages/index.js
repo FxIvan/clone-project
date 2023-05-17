@@ -11,6 +11,7 @@ import TieredSystem from "../component/app/tieredSystem";
 import RoundOne from "../component/app/roundOne";
 import RoundTwo from "../component/app/roundTwo";
 import VenturePartner from "../component/app/venturePartner";
+import Contact from "../component/app/contact";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
           <RoundOne />
           <RoundTwo />
           <VenturePartner />
+          <Contact />
         </div>
       </Container>
     </Container>
