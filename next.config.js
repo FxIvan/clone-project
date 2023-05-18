@@ -15,10 +15,12 @@ const nextConfig = {
 
     return config;
   },
+  /*
   server: {
     // Configura Next.js para escuchar en todas las interfaces de red
     host: "0.0.0.0",
   },
+  */
 };
 
 module.exports = nextConfig;
