@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <Container className="my-5">
+    <Container className={styles.aboutUsContainer}>
       <Row className={styles.titleAboutUs + " text-center my-5"}>
         <h2 className="">ABOUT US</h2>
       </Row>

@@ -3,3 +3,9 @@
   font-weight: 700;
   color: #f1b90c;
 }
+
+.containerButtonHeader button{
+  background-color: transparent;
+  border-color: #f1b90c;
+  color: #f1b90c;
+}
