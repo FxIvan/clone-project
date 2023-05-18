@@ -35,9 +35,9 @@
   width: 350px;
   height: 350px;
   border-bottom-color: #fdfdfd;
-  border-right-color: rgba(#e0e0e0, 0);
+  border-right-color: rgba(252, 252, 252, 0.336);
   border-top-color: #fdfdfd;
-  border-left-color: rgba(#e0e0e0, 0);
+  border-right-color: rgba(252, 252, 252, 0.336);
   top: 0px;
   left: 0px;
   animation: rotate-animation 14s linear 0s infinite;
@@ -46,10 +46,10 @@
 .spinnerOne:after {
   width: calc(300px - 4px * 2);
   height: calc(300px - 4px * 2);
-  border-bottom-color: #e0e0e0;
-  border-right-color: rgba(#e0e0e0, 0);
-  border-top-color: #e0e0e0;
-  border-left-color: rgba(#e0e0e0, 0);
+  border-bottom-color: #fdfdfd;
+  border-right-color: rgba(252, 252, 252, 0.336);
+  border-top-color: #fdfdfd;
+  border-right-color: rgba(252, 252, 252, 0.336);
   top: calc((370px - 300px - 4px * 2) / 2);
   left: calc((370px - 305px - 4px * 2) / 2);
   animation: anti-rotate-animation 8s linear 0s infinite;
