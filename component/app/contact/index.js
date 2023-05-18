@@ -20,7 +20,7 @@ export default function Contact() {
         <div className="position-relative">
           <div className={styles.spinnerContainer}>
             <div className={styles.spinnerBlock}>
-              <div class={`${styles.spinner}  ${styles.spinnerOne}`}></div>
+              <div className={`${styles.spinner}  ${styles.spinnerOne}`}></div>
             </div>
           </div>
           <div className={styles.contactInfo}>
