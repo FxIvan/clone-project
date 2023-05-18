@@ -1,9 +1,13 @@
 import { Container } from "react-bootstrap";
 
-export default () => {
+const ProjectsPage = () => {
   return (
     <Container>
       <h1>StakingLayout</h1>
     </Container>
   );
 };
+
+ProjectsPage.displayName = 'ProjectsPage';
+
+export default ProjectsPage;
