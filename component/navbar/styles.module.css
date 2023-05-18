@@ -1,11 +1,37 @@
-.logo{
+.logo {
   font-size: 26px;
   font-weight: 700;
   color: #f1b90c;
 }
 
-.containerButtonHeader button{
+.redirectPrincipal{
+  text-decoration: none;
+  color: #f1b90c;
+  display: flex;
+  align-items: center;
+}
+
+.redirectPrincipal:hover{
+  text-decoration: none;
+  color: #f1b90c;
+}
+
+.containerButtonHeader button {
   background-color: transparent;
   border-color: #f1b90c;
   color: #f1b90c;
+}
+
+.button {
+  border: 1px solid #f1b90c;
+  padding: 0.2rem 1.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #f1b90c;
+}
+
+.button:hover {
+  color: black;
+  background-color: #f1b90c;
 }

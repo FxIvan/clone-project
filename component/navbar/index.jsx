@@ -11,6 +11,7 @@ import {
   faTape,
   faWallet,
 } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export default function NavBar() {
   return (
@@ -19,14 +20,16 @@ export default function NavBar() {
         <Row className="py-2">
           <Col xxl={5} lg={4} className="d-flex justify-content-start">
             <div className={styles.logo + " d-flex align-items-center"}>
-              <Image
-                src={logo}
-                alt="logo"
-                width={22}
-                height={27}
-                className="me-2"
-              />
-              BSCPad
+              <Link href="/" className={styles.redirectPrincipal}>
+                <Image
+                  src={logo}
+                  alt="logo"
+                  width={22}
+                  height={27}
+                  className="me-2"
+                />
+                <span>BSCPad</span>
+              </Link>
             </div>
           </Col>
           <Col xxl={7} lg={8}>
@@ -40,23 +43,23 @@ export default function NavBar() {
                   <span>Connect Wallet</span>
                 </Button>
               </Col>
-              <Col md={3} className="d-flex justify-content-center">
-                <Button
-                  variant="warning"
-                  className="btn-sm d-flex align-items-center  w-100 justify-content-center rounded-pill"
+              <Col md={2} className="d-flex justify-content-center ps-2">
+                <Link
+                  href="/projects"
+                  className={styles.button + " rounded-pill"}
                 >
                   <FontAwesomeIcon icon={faFire} className="pe-2" />
                   Projects
-                </Button>
+                </Link>
               </Col>
-              <Col md={3} className="d-flex justify-content-center">
-                <Button
-                  variant="warning"
-                  className="btn-sm d-flex align-items-center  w-100 justify-content-center rounded-pill"
+              <Col md={2} className="d-flex justify-content-center">
+                <Link
+                  href="/staking"
+                  className={styles.button + " rounded-pill"}
                 >
-                  <FontAwesomeIcon icon={faTape} className="pe-2" />
+                  <FontAwesomeIcon icon={faFire} className="pe-2" />
                   Staking
-                </Button>
+                </Link>
               </Col>
               <Col md={1} className="d-flex justify-content-center">
                 <Button variant="warning" className="rounded-circle">

@@ -6,6 +6,7 @@ import fiat2bnb from "../../../public/image/landing/fiat2bnb.png";
 import Image from "next/image";
 
 import styles from "./styles.module.css";
+import Link from "next/link";
 export default function HomeButton() {
   return (
     <Container className="my-5">
@@ -16,7 +17,7 @@ export default function HomeButton() {
       >
         <Col xxl={2} xs={3} className="mb-3 me-1">
           <Button variant="warning" className="w-100 rounded-pill">
-            VEW ALL PROJECTS
+            <Link href="/projects" className={styles.button}>VIEW ALL PROJECTS</Link>
           </Button>
         </Col>
         <Col xxl={3} xs={3} lg={4} className="mb-3 me-1">
