@@ -3,6 +3,7 @@ import Layout from "../../component/layout";
 import ProjectOpenNow from "../../component/app/projectOpenNow";
 import ProjectComingSoon from "../../component/app/projectComingSoon";
 import styles from "./styles.module.css";
+import ProjectsClosed from "../../component/app/projectsClosed";
 
 const StakingPage = () => {
   return (
@@ -10,6 +11,7 @@ const StakingPage = () => {
       <div className={styles.backgroundImage}></div>
       <ProjectOpenNow />
       <ProjectComingSoon />
+      <ProjectsClosed />
     </>
   );
 };
