@@ -19,6 +19,7 @@ export default function ProjectsClosed() {
               description={
                 "The first decentralized blockchain-based hunting metaverse that joins millions of hunting enthusiasts into one community!"
               }
+              participant={3879}
             />
           </Row>
         </Col>

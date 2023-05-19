@@ -26,6 +26,9 @@
   border-color: #3d3d3d;
   color: white;
 }
+.buttonrrss a:hover {
+  color: #f1b90c;
+}
 
 .opensInTBA button {
   background-color: rgb(240 185 19 / 26%);
@@ -87,7 +90,7 @@
   line-height: 1.5;
 }
 
-.containerProgressBar p span{
-    color: white;
-    font-weight: bold;
+.containerProgressBar p span {
+  color: white;
+  font-weight: bold;
 }

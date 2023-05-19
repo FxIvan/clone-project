@@ -9,7 +9,7 @@ import {
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Card({ projectStatus, swapRate, cap , title, description }) {
+export default function Card({ projectStatus, swapRate, cap , title, description , participant }) {
   return (
     <Col sm={5} className={styles.containerCard + " p-4"}>
       <Row>
@@ -117,7 +117,7 @@ export default function Card({ projectStatus, swapRate, cap , title, description
           <div className="d-flex justify-content-between">
             <p className="mb-1">Progress</p>
             <p className="mb-1">
-              Participants: <span>3640</span>
+              Participants: <span>{participant}</span>
             </p>
           </div>
           <div>

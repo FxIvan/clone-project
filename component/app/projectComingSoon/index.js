@@ -19,6 +19,7 @@ export default function ProjectComingSoon() {
               description={
                 "World's first engage-to-earn NFT fighting game simulator developed by industry veterans from Amazon, EA, and Unity."
               }
+              participant={0}
             />
           </Row>
         </Col>
