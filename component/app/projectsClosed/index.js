@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./styles.module.css";
+import Card from "../card";
 
 export default function ProjectsClosed() {
   return (
@@ -10,7 +11,7 @@ export default function ProjectsClosed() {
         </Col>
         <Col sm={12}>
           <Row>
-            <h3>Cards</h3>
+            <Card projectStatus={false} />
           </Row>
         </Col>
       </Row>
