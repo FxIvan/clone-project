@@ -4,16 +4,20 @@
   color: #f1b90c;
 }
 
-.redirectPrincipal{
+.redirectPrincipal {
   text-decoration: none;
   color: #f1b90c;
   display: flex;
   align-items: center;
 }
 
-.redirectPrincipal:hover{
+.redirectPrincipal:hover {
   text-decoration: none;
   color: #f1b90c;
+}
+.containerButtonHeader {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .containerButtonHeader button {
