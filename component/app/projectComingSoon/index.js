@@ -11,7 +11,15 @@ export default function ProjectComingSoon() {
         </Col>
         <Col sm={12}>
           <Row>
-            <Card projectStatus={true} />
+            <Card
+              projectStatus={true}
+              swapRate={`TBA`}
+              cap={`TBA`}
+              title={"Taunt Battleworld"}
+              description={
+                "World's first engage-to-earn NFT fighting game simulator developed by industry veterans from Amazon, EA, and Unity."
+              }
+            />
           </Row>
         </Col>
       </Row>

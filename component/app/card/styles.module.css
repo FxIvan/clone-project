@@ -12,6 +12,7 @@
 .containerHeaderCards h4 {
   color: white;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .buttonrrss a {
@@ -67,8 +68,7 @@
 }
 
 .swapCapAccess ol li {
-  color: white;
-  text-align: center;
+  color: #999;
 }
 
 .swapCapAccess ol {
@@ -82,7 +82,12 @@
 }
 
 .containerProgressBar p {
-  color: white;
+  color: #999;
   font-size: 14px;
   line-height: 1.5;
+}
+
+.containerProgressBar p span{
+    color: white;
+    font-weight: bold;
 }

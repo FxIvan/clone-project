@@ -9,7 +9,7 @@ import {
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Card({ projectStatus }) {
+export default function Card({ projectStatus, swapRate, cap , title, description }) {
   return (
     <Col sm={5} className={styles.containerCard + " p-4"}>
       <Row>
@@ -20,7 +20,7 @@ export default function Card({ projectStatus }) {
               <div
                 className={styles.containerHeaderCards + " d-flex flex-column"}
               >
-                <h4>Taunt Battleworld</h4>
+                <h4>{title}</h4>
                 <div className={styles.buttonrrss + " mb-2 d-flex"}>
                   <a href="#">
                     <FontAwesomeIcon
@@ -85,28 +85,27 @@ export default function Card({ projectStatus }) {
         <Col sm={12} className="py-3">
           <div className={styles.descriptionCard}>
             <p>
-              World's first engage-to-earn NFT fighting game simulator developed
-              by industry veterans from Amazon, EA, and Unity.
+              {description}
             </p>
           </div>
         </Col>
         <Col sm={12}>
           <div className={styles.swapCapAccess}>
             <ol className="d-flex justify-content-between">
-              <div>
+              <div className="text-left">
                 <li>Swap rate</li>
                 <li>
-                  <span>TBA</span>
+                  <span>{swapRate}</span>
                 </li>
               </div>
-              <div>
+              <div className="text-center">
                 <li>Cap</li>
                 <li>
-                  <span>TBA</span>
+                  <span>{cap}</span>
                 </li>
               </div>
               <div>
-                <li>Access</li>
+                <li className="text-end">Access</li>
                 <li>
                   <span>Private</span>
                 </li>
@@ -125,8 +124,12 @@ export default function Card({ projectStatus }) {
             <ProgressBar variant="warning" now={60} />
           </div>
           <div className="d-flex justify-content-between">
-            <p>0%</p>
-            <p>0/1000</p>
+            <p>
+              <span>0%</span>
+            </p>
+            <p>
+              <span>0/1000</span>
+            </p>
           </div>
         </Col>
       </Row>
