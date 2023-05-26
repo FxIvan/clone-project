@@ -1,0 +1,36 @@
+.containerDetailBanner h2 {
+  color: white;
+}
+
+.containerDetailBanner p {
+  color: #6c757d;
+}
+
+.opensInTBA button {
+  background-color: rgb(240 185 19 / 26%);
+  color: #f1b90c;
+  font-size: 12px;
+  border: #f1b90c;
+  padding: 3px 10px 4px 10px;
+  cursor: none !important;
+}
+
+.closed button {
+  background-color: rgba(240, 34, 19, 0.26);
+  color: red;
+  font-size: 12px;
+  border: red;
+  padding: 3px 10px 4px 10px;
+  cursor: none !important;
+}
+
+.rrss a{
+    padding: 0 0.5rem;
+}
+
+.buttonWallet button{
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
