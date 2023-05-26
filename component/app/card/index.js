@@ -29,22 +29,13 @@ export default function Card({
           <Row>
             <Col sm={4} className="d-flex">
               <div className={styles.iconBox}>
-                {/*
-                <div className={styles.spinnerContainer}>
-                  <div className={styles.spinnerBlock}>
-                    <div
-                      className={`${styles.spinner}  ${styles.spinnerOne}`}
-                    ></div>
-                  </div>
-                </div>
-                */}
                 <span>
                   <Image src={icon2} />
                 </span>
               </div>
             </Col>
             <Col sm={8}>
-              <Link href="#">
+              <Link href="/projects/textParams">
                 <div
                   className={
                     styles.containerHeaderCards + " d-flex flex-column"
