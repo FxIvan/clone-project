@@ -35,7 +35,7 @@ export default function Card({
               </div>
             </Col>
             <Col sm={8}>
-              <Link href="/projects/textParams">
+              <Link href="/projects/directionWallet">
                 <div
                   className={
                     styles.containerHeaderCards + " d-flex flex-column"
