@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import styles from "./styles.module.css";
 import Card from "../card";
 
-export default function ProjectComingSoon() {
+export default function ProjectComingSoon({ comingSoonTokens }) {
   return (
     <Container>
       <Row>
@@ -10,17 +10,17 @@ export default function ProjectComingSoon() {
           <h2>PROJECTS COMING SOON</h2>
         </Col>
         <Col sm={12}>
-          <Row>
-            <Card
-              projectStatus={true}
-              swapRate={`TBA`}
-              cap={`TBA`}
-              title={"Taunt Battleworld"}
-              description={
-                "World's first engage-to-earn NFT fighting game simulator developed by industry veterans from Amazon, EA, and Unity."
-              }
-              participant={0}
-            />
+          <Row className="d-flex justify-content-between">
+            {comingSoonTokens.map((token) => (
+              <Card
+                tittle={token.name}
+                description={token.description}
+                participant={0}
+                projectStatus={true}
+                swapRate={token.ticker}
+                cap={token.ticker}
+              />
+            ))}
           </Row>
         </Col>
       </Row>
