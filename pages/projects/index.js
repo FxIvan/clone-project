@@ -48,6 +48,20 @@ const StakingPage = ({ tokens }) => {
     </Container>
   );
 
+  tokens.map((token) => {
+    if (token.token_status === "active") {
+      activeTokens.push(token)
+    } else if (token.token_status === "coming_soon") {
+      comingSoonTokens.push(token)
+    } else if (token.token_status === "closed") {
+      closedTokens.push(token)
+    }
+  });
+  console.log("activeTokens", activeTokens);
+  console.log("comingSoonTokens", comingSoonTokens);
+  console.log("closedTokens", closedTokens);
+  console.log("tokens",tokens);
+
   return (
     <>
       <div className={styles.backgroundImage}></div>
