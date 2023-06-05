@@ -1,24 +1,59 @@
-import { Container } from "react-bootstrap";
-import Layout from "../../component/layout";
-import ProjectOpenNow from "../../component/app/projectOpenNow";
-import ProjectComingSoon from "../../component/app/projectComingSoon";
+import { Container, Row, Col } from "react-bootstrap";
 import styles from "./styles.module.css";
-import ProjectsClosed from "../../component/app/projectsClosed";
-
+import Card from "../../component/app/card";
 const axios = require("axios").default;
 
 const StakingPage = ({ tokens }) => {
   // Fer filter status 3 variables
-  const activeTokens = tokens.tokens.filter((token) => token.status === "active");
-  const comingSoonTokens = tokens.tokens.filter((token) => token.status === "coming_soon");
-  const closedTokens = tokens.tokens.filter((token) => token.status === "closed");
+  const activeTokens = tokens.filter((token) => token.status === "active");
+  const comingSoonTokens = tokens.filter((token) => token.status === "coming_soon");
+  const closedTokens = tokens.filter((token) => token.status === "closed");
+
+  const sections = [
+    {
+      title: "PROJECTS OPEN NOW",
+      data: activeTokens,
+    },
+    {
+      title: "PROJECTS COMING SOON",
+      data: comingSoonTokens,
+    },
+    {
+      title: "PROJECTS CLOSED",
+      data: closedTokens,
+    },
+  ];
+
+  const Section = ({ title, data }) => (
+    <Container>
+      <Row>
+        <Col sm={12} className={styles.projectComingSoon + " text-center"}>
+          <h2>{title}</h2>
+        </Col>
+        <Col sm={12}>
+          <Row className="d-flex justify-content-between">
+            {data.map((token) => (
+              <Card
+                tittle={token.name}
+                description={token.description}
+                participant={0}
+                projectStatus={true}
+                swapRate={token.ticker}
+                cap={token.ticker}
+              />
+            ))}
+          </Row>
+        </Col>
+      </Row>
+    </Container>
+  );
 
   return (
     <>
       <div className={styles.backgroundImage}></div>
-      <ProjectOpenNow activeTokens={activeTokens} />
-      <ProjectComingSoon comingSoonTokens={comingSoonTokens} />
-      <ProjectsClosed closedTokens={closedTokens} />
+      {sections.map((section) => (
+        <Section title={section.title} data={section.data} />
+      ))}
     </>
   );
 };
@@ -28,7 +63,7 @@ export const getServerSideProps = async () => {
   console.log(tokens);
   return {
     props: {
-      tokens,
+      tokens: tokens.tokens,
     },
   };
 };
