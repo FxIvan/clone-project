@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import Layout from "../component/layout";
 import videoBackground from "../public/video/redLazos.mp4";
 import styles from "./styles.module.css";
@@ -8,10 +8,12 @@ import ProfileButton from "../component/app/profileButton";
 import OurPartners from "../component/app/ourPartners";
 import AboutUs from "../component/app/aboutUs/aboutUs";
 import TieredSystem from "../component/app/tieredSystem";
-import RoundOne from "../component/app/roundOne";
 import RoundTwo from "../component/app/roundTwo";
 import VenturePartner from "../component/app/venturePartner";
 import Contact from "../component/app/contact";
+
+import tiers from "/data/tiers";
+import TierCard from "/component/app/tierCard";
 
 export default function Home() {
   return (
@@ -31,7 +33,18 @@ export default function Home() {
           <OurPartners />
           <AboutUs />
           <TieredSystem />
-          <RoundOne />
+          {/* Tiers */}
+          <Container>
+            <Row className={styles.titleRound + " text-center mt-5 mb-3"}>
+              <h2 className={styles.textBf}>ROUND 1 - ALLOCATION ROUND</h2>
+            </Row>
+            <Row>
+              {tiers.map((item, index) => {
+                return <TierCard key={index} item={item} />;
+              })}
+            </Row>
+          </Container>
+
           <RoundTwo />
           <VenturePartner />
           <Contact />
