@@ -162,13 +162,14 @@ export default function FullFeaturedCrudGrid({ tokens }) {
 
         if (isInEditMode) {
           return [
-            <GridActionsCellItem icon={<SaveIcon />} label="Save" onClick={handleSaveClick(id)} />,
+            <GridActionsCellItem icon={<SaveIcon />} label="Save" onClick={handleSaveClick(id)} key={id} />,
             <GridActionsCellItem
               icon={<CancelIcon />}
               label="Cancel"
               className="textPrimary"
               onClick={handleCancelClick(id)}
               color="inherit"
+              key={id}
             />,
           ];
         }
@@ -180,12 +181,14 @@ export default function FullFeaturedCrudGrid({ tokens }) {
             className="textPrimary"
             onClick={handleEditClick(id)}
             color="inherit"
+            key={id}
           />,
           <GridActionsCellItem
             icon={<DeleteIcon />}
             label="Delete"
             onClick={handleDeleteClick(id)}
             color="inherit"
+            key={id}
           />,
         ];
       },

@@ -17,7 +17,6 @@ export default function TokenInfo({ token }) {
     <>
     <div className={styles.backgroundImage}></div>
       <Col className="text-center">
-      {/* Quiero que se muestre el banner y crear una tabla con la información del token */}
       <DetailBanner
         token={token.token}
       />

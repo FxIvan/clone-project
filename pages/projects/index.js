@@ -40,6 +40,7 @@ const StakingPage = ({ tokens }) => {
                 projectStatus={token.token_status === "active" ? true : token.token_status === "coming_soon" ? true : token.token_status === "closed" ? false : true}
                 swapRate={token.ticker}
                 cap={token.ticker}
+                key={token.token_id}
               />
             ))}
           </Row>
@@ -62,7 +63,7 @@ const StakingPage = ({ tokens }) => {
     <>
       <div className={styles.backgroundImage}></div>
       {sections.map((section) => (
-        <Section title={section.title} data={section.data} />
+        <Section title={section.title} data={section.data} key={section.data.title} />
       ))}
     </>
   );
