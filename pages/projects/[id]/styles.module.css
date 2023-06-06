@@ -1,0 +1,22 @@
+.backgroundImage {
+  background-image: url("../../../public/image/landing/map.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: -1;
+  background-color: rgba(13, 13, 24, 0.836);
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.projectComingSoon h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #c0c0c0;
+  padding: 4rem 0;
+}

@@ -21,11 +21,10 @@ const AuthPage = () => {
       });
 
       if (res.status === 200) {
-        secureLocalStorage.setItem("token", res.data.token);
+        secureLocalStorage.setItem("secretOrPrivateKey", res.data.secretOrPrivateKey);
         router.push("/admin");
       }
     } catch (error) {
-      console.log(error);
     }
   };
 

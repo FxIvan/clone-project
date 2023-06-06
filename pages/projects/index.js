@@ -8,7 +8,6 @@ const StakingPage = ({ tokens }) => {
   const activeTokens = tokens.filter((token) => token.status === "active");
   const comingSoonTokens = tokens.filter((token) => token.status === "coming_soon");
   const closedTokens = tokens.filter((token) => token.status === "closed");
-
   const sections = [
     {
       title: "PROJECTS OPEN NOW",
@@ -34,10 +33,11 @@ const StakingPage = ({ tokens }) => {
           <Row className="d-flex justify-content-between">
             {data.map((token) => (
               <Card
+                id={token.token_id}
                 tittle={token.name}
                 description={token.description}
                 participant={0}
-                projectStatus={true}
+                projectStatus={token.token_status === "active" ? true : token.token_status === "coming_soon" ? true : token.token_status === "closed" ? false : true}
                 swapRate={token.ticker}
                 cap={token.ticker}
               />
@@ -57,10 +57,6 @@ const StakingPage = ({ tokens }) => {
       closedTokens.push(token)
     }
   });
-  console.log("activeTokens", activeTokens);
-  console.log("comingSoonTokens", comingSoonTokens);
-  console.log("closedTokens", closedTokens);
-  console.log("tokens",tokens);
 
   return (
     <>
@@ -74,7 +70,6 @@ const StakingPage = ({ tokens }) => {
 export const getServerSideProps = async () => {
   const res = (await axios.get("http://localhost:6000/api/tokens", { responseType: "json" })).data;
   const tokens = await res;
-  console.log(tokens);
   return {
     props: {
       tokens: tokens.tokens,

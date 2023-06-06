@@ -68,15 +68,54 @@ export default function FullFeaturedCrudGrid({ tokens }) {
     setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.Edit } });
   };
 
-  const handleSaveClick = (id) => () => {
-    console.log(id);
-    setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
+  const handleSaveClick = (id) => async () => {
+    const editedRow = rows.find((row) => row.token_id === id);
+  
+    const {
+      token_price,
+      token_max_amount,
+      token_address,
+      ticker,
+      name,
+      description,
+      token_status,
+      token_twitter,
+      token_telegram,
+      token_website,
+    } = editedRow;
+  
+    const updatedData = {
+      token_price,
+      token_max_amount,
+      token_address,
+      ticker,
+      name,
+      description,
+      token_status,
+      token_twitter,
+      token_telegram,
+      token_website,
+    };
+
+    console.log("updatedData", updatedData);
+  
+    try {
+      const response = await axios.put(`http://localhost:6000/api/tokens/${id}`, updatedData);
+      // Handle the successful response
+      console.log("Row updated successfully:", response.data);
+      // Optionally, you can update the rows state with the updated data received from the server
+  
+      // Set the row mode to View mode
+      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
+    } catch (error) {
+      // Handle the error
+      console.error("Error updating row:", error);
+      // Optionally, you can display an error message to the user
+    }
   };
 
   const handleDeleteClick = (id) => () => {
     setRows(rows.filter((row) => row.token_id !== id));
-    // API CALL
-    console.log("HI");
   };
 
   const handleCancelClick = (id) => () => {
@@ -94,8 +133,6 @@ export default function FullFeaturedCrudGrid({ tokens }) {
   const processRowUpdate = (newRow) => {
     const updatedRow = { ...newRow, isNew: false };
     setRows(rows.map((row) => (row.token_id === newRow.token_id ? updatedRow : row)));
-    // API CALL
-    console.log("HI");
     return updatedRow;
   };
 
@@ -106,13 +143,7 @@ export default function FullFeaturedCrudGrid({ tokens }) {
   const columns = [
     { field: "token_id", headerName: "ID", width: 100, editable: false },
     { field: "token_price", headerName: "Price", width: 100, editable: true, type: "number" },
-    {
-      field: "token_max_amount",
-      headerName: "Max Amount",
-      width: 100,
-      editable: true,
-      type: "number",
-    },
+    { field: "token_max_amount", headerName: "Max Amount", width: 100, editable: true, type: "number" },
     { field: "token_address", headerName: "Address", width: 100, editable: true, type: "string" },
     { field: "ticker", headerName: "Ticker", width: 100, editable: true, type: "string" },
     { field: "name", headerName: "Name", width: 100, editable: true, type: "string" },
@@ -121,8 +152,7 @@ export default function FullFeaturedCrudGrid({ tokens }) {
     { field: "token_twitter", headerName: "Twitter", width: 100, editable: true, type: "string" },
     { field: "token_telegram", headerName: "Telegram", width: 100, editable: true, type: "string" },
     { field: "token_website", headerName: "Website", width: 100, editable: true, type: "string" },
-    {
-      field: "actions",
+    { field: "actions",
       type: "actions",
       headerName: "Actions",
       width: 100,
@@ -192,7 +222,6 @@ export default function FullFeaturedCrudGrid({ tokens }) {
 export const getServerSideProps = async () => {
   const res = (await axios.get("http://localhost:6000/api/tokens", { responseType: "json" })).data;
   const tokens = await res;
-  console.log(tokens);
   return {
     props: {
       tokens: tokens.tokens,

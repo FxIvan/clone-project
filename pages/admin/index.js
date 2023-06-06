@@ -7,16 +7,14 @@ const AdminPage = () => {
   const validateToken = async () => {
     try {
       const token = localStorage.getItem("token");
-      console.log(token);
       const res = await axios.post("/api/validateToken", {
         token,
       });
-      console.log(res);
       if (res.status === 200) {
         router.push("/admin");
       }
     } catch (error) {
-      console.log(error);
+      router.push("/login");
     }
   };
 
