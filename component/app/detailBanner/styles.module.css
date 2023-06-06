@@ -124,8 +124,15 @@
 }
 
 .table {
+  background-color: #17191a99;
   color: white;
   margin: 0 auto;
   max-width: 800px;
   margin-bottom: 3rem;
+}
+
+.containerProgressBar {
+  background-color: #856c21;
+  padding: 2rem;
+  border-radius: 25px;
 }

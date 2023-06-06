@@ -1,4 +1,4 @@
-import { Button, Col, Container, Row, Table } from "react-bootstrap";
+import { Button, Col, Container, Row, Table, ProgressBar } from "react-bootstrap";
 import {
   faCircle,
   faDove,
@@ -21,82 +21,75 @@ export default function DetailBanner({ token }) {
         <div className={styles.containerCard + " p-4 mt-4"}>
           <Row>
             <Col sm={4} className="d-flex">
-                <div className={styles.iconBox}>
-                  <span>
-                    <Image src={icon2} />
-                  </span>
-                </div>
+              <div className={styles.iconBox}>
+                <span>
+                  <Image src={icon2} />
+                </span>
+              </div>
             </Col>
           </Row>
-          <Row>
-            <Col sm={12} className="d-flex align-items-center">
-              <div className="pe-3">
-                <h2>{token.name}</h2>
+          <Row className="d-flex justify-content-between">
+            <div className="col">
+              <div className="d-flex align-items-center">
+                <div className="pe-3">
+                  <h2>{token.name}</h2>
+                </div>
+                <div className={styles.rrss}>
+                  <a href="https://verve.fi/" target="_blank">
+                    <FontAwesomeIcon
+                      icon={faGlobe}
+                      style={{ width: "16px", height: "16px", color: "#f1b90a" }}
+                    />
+                  </a>
+                  <a href="https://twitter.com/" target="_blank">
+                    <FontAwesomeIcon
+                      icon={faDove}
+                      style={{ width: "16px", height: "16px", color: "#f1b90a" }}
+                    />
+                  </a>
+                  <a href="https://telegram.com" target="_blank">
+                    <FontAwesomeIcon
+                      icon={faPaperPlane}
+                      style={{ width: "16px", height: "16px", color: "#f1b90a" }}
+                    />
+                  </a>
+                </div>
               </div>
-              <div className={styles.rrss}>
-                <a href="https://verve.fi/" target="_blank">
-                  <FontAwesomeIcon
-                    icon={faGlobe}
-                    style={{ width: "16px", height: "16px", color: "#f1b90a" }}
-                  />
-                </a>
-                <a href="https://twitter.com/" target="_blank">
-                  <FontAwesomeIcon
-                    icon={faDove}
-                    style={{ width: "16px", height: "16px", color: "#f1b90a" }}
-                  />
-                </a>
-                <a href="https://telegram.com" target="_blank">
-                  <FontAwesomeIcon
-                    icon={faPaperPlane}
-                    style={{ width: "16px", height: "16px", color: "#f1b90a" }}
-                  />
-                </a>
-              </div>
-            </Col>
-            <Col sm={6}>
               <div className={styles.columnLeft}>
-                <Row sm={12} class="d-flex flex-column p-2">
-                {openClose && openClose === true ? (
-                          <div className={styles.opensInTBA + " mb-2"}>
-                            <Button className="rounded-pill">
-                              {" "}
-                              <FontAwesomeIcon
-                                icon={faCircle}
-                                className="fa-2xs pe-2"
-                                style={{ color: "#f1b90c" }}
-                              />
-                              Opens in TBA
-                            </Button>
-                          </div>
-                        ) : (
-                          <div className={styles.closed + " mb-2"}>
-                            <Button className="rounded-pill">
-                              <FontAwesomeIcon
-                                icon={faCircle}
-                                className="fa-2xs pe-2"
-                                style={{ color: "red" }}
-                              />
-                              Closed
-                            </Button>
-                          </div>
-                        )}
+                <Row className="d-flex flex-column p-2">
+                  {openClose && openClose === true ? (
+                    <div className={styles.opensInTBA + " mb-2"}>
+                      <Button className="rounded-pill">
+                        <FontAwesomeIcon
+                          icon={faCircle}
+                          className="fa-2xs pe-2"
+                          style={{ color: "#f1b90c" }}
+                        />
+                        Opens in TBA
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className={styles.closed + " mb-2"}>
+                      <Button className="rounded-pill">
+                        <FontAwesomeIcon
+                          icon={faCircle}
+                          className="fa-2xs pe-2"
+                          style={{ color: "red" }}
+                        />
+                        Closed
+                      </Button>
+                    </div>
+                  )}
                   <div className={styles.opensInTBA + " mb-2"}>
                     <Button className="rounded-pill">BUSD</Button>
                   </div>
                 </Row>
               </div>
-            </Col>
-            <Col sm={12}>
-              <div class="d-flex p-2">
-                <p>
-                  {token.description}
-                </p>
+              <div className="d-flex p-2">
+                <p>{token.description}</p>
               </div>
-            </Col>
-            <Col sm={12}>
               <Row>
-                <Col xxl={3} lg={4} className={styles.buttonWallet +" d-flex justify-content-center"}>
+                <Col  lg={4} className={styles.buttonWallet + " d-flex justify-content-center"}>
                   <Button
                     variant="warning"
                     className="btn-sm d-flex align-items-center w-100 justify-content-center rounded-pill"
@@ -105,7 +98,28 @@ export default function DetailBanner({ token }) {
                   </Button>
                 </Col>
               </Row>
-            </Col>
+            </div>
+            <div className={"col"} >
+              <div className={styles.containerProgressBar}>
+                <div className="d-flex justify-content-between">
+                  <p className="mb-1">Progress</p>
+                  <p className="mb-1">
+                    Participants: <span>0</span>
+                  </p>
+                </div>
+                <div>
+                  <ProgressBar variant="warning" now={60} />
+                </div>
+      <div className="d-flex justify-content-between">
+        <p>
+          <span>0%</span>
+        </p>
+        <p>
+          <span>0/1000</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </Row>
         </div>
         <Row>
