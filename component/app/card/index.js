@@ -1,13 +1,7 @@
 import { Button, Col, ProgressBar, Row } from "react-bootstrap";
 import styles from "./styles.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircle,
-  faDove,
-  faGlobe,
-  faM,
-  faPaperPlane,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCircle, faDove, faGlobe, faM, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -22,7 +16,7 @@ export default function Card({
   title,
   description,
   participant,
-  id
+  id,
 }) {
   const handleClick = () => {
     // Aquí puedes realizar acciones adicionales antes de navegar a la ruta
@@ -43,16 +37,8 @@ export default function Card({
             </Col>
             <Col sm={8}>
               <Link href={`/projects/${id}`} passHref>
-                <div
-                  onClick={handleClick}
-                  className={styles.link}
-                  role="button"
-                >
-                  <div
-                    className={
-                      styles.containerHeaderCards + " d-flex flex-column"
-                    }
-                  >
+                <div onClick={handleClick} className={styles.link} role="button">
+                  <div className={styles.containerHeaderCards + " d-flex flex-column"}>
                     <h4>{title}</h4>
                     <div className={styles.buttonrrss + " mb-2 d-flex"}>
                       <a href="#">
@@ -91,7 +77,7 @@ export default function Card({
                           <FontAwesomeIcon
                             icon={faCircle}
                             className="fa-2xs pe-2"
-                            style={{ color: "#f1b90c" }}
+                            style={{ color: "#ffbb11" }}
                           />
                           Opens in TBA
                         </Button>

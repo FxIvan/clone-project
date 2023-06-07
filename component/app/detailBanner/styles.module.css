@@ -8,9 +8,9 @@
 
 .opensInTBA button {
   background-color: rgb(240 185 19 / 26%);
-  color: #f1b90c;
+  color: #ffbb11;
   font-size: 12px;
-  border: #f1b90c;
+  border: #ffbb11;
   padding: 3px 10px 4px 10px;
   cursor: none !important;
 }
@@ -24,19 +24,19 @@
   cursor: none !important;
 }
 
-.rrss a{
-    padding: 0 0.5rem;
+.rrss a {
+  padding: 0 0.5rem;
 }
 
-.buttonWallet button{
-    padding: 0.5rem 1rem;
-    font-size: 14px;
-    font-weight: 500;
-    color: white;
+.buttonWallet button {
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
 }
 .containerCard {
   transition: transform 1s ease;
-  color: white
+  color: white;
 }
 
 .columnLeft {
@@ -45,7 +45,6 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
-
 
 .iconBox {
   margin: auto;

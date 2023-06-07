@@ -113,7 +113,7 @@ export default function DetailBanner({ token }) {
                       <FontAwesomeIcon
                         icon={faCircle}
                         className="fa-2xs pe-2"
-                        style={{ color: "#f1b90c" }}
+                        style={{ color: "#ffbb11" }}
                       />
                       Opens in TBA
                     </Button>

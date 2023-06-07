@@ -16,19 +16,16 @@ import Link from "next/link";
 export default function NavBar() {
   return (
     <header>
-      <Container className="d-sm-none d-md-block d-md-none d-lg-block d-none d-sm-block d-lg-none d-xl-block">
-        <Row className="py-2">
+      <Container
+        fluid
+        className="d-sm-none d-md-block d-md-none d-lg-block d-none d-sm-block d-lg-none d-xl-block bg-dark w-100"
+      >
+        <Row className="py-5">
           <Col xxl={5} lg={4} className="d-flex justify-content-start">
             <div className={styles.logo + " d-flex align-items-center"}>
               <Link href="/" className={styles.redirectPrincipal}>
-                <Image
-                  src={logo}
-                  alt="logo"
-                  width={22}
-                  height={27}
-                  className="me-2"
-                />
-                <span>BSCPad</span>
+                <Image src={logo} alt="logo" width={22} height={27} className="me-2" />
+                <span>ROIPad</span>
               </Link>
             </div>
           </Col>
@@ -41,43 +38,6 @@ export default function NavBar() {
                 >
                   <FontAwesomeIcon icon={faWallet} className="pe-2" />
                   <span>Connect Wallet</span>
-                </Button>
-              </Col>
-              <Col md={2} className="d-flex justify-content-center ps-2">
-                <Link
-                  href="/projects"
-                  className={styles.button + " rounded-pill"}
-                >
-                  <FontAwesomeIcon icon={faFire} className="pe-2" />
-                  Projects
-                </Link>
-              </Col>
-              <Col md={2} className="d-flex justify-content-center">
-                <Link
-                  href="/staking"
-                  className={styles.button + " rounded-pill"}
-                >
-                  <FontAwesomeIcon icon={faFire} className="pe-2" />
-                  Staking
-                </Link>
-              </Col>
-              <Col md={1} className="d-flex justify-content-center">
-                <Button variant="warning" className="rounded-circle">
-                  <FontAwesomeIcon icon={faCalendarDays} />
-                </Button>
-              </Col>
-              <Col md={1} className="d-flex justify-content-center">
-                <Button variant="warning" className="rounded-circle">
-                  <FontAwesomeIcon icon={faLightbulb} />
-                </Button>
-              </Col>
-              <Col md={1} className="d-flex justify-content-center">
-                <Button
-                  variant="warning"
-                  className="btn-sm d-flex align-items-center rounded-pill"
-                >
-                  EN
-                  <FontAwesomeIcon icon={faAngleDown} className="ps-1" />
                 </Button>
               </Col>
             </Row>

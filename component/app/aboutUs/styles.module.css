@@ -1,25 +1,25 @@
-.aboutUsContainer{
+.aboutUsContainer {
   margin: 10rem 0;
 }
 
-.titleAboutUs h2{
+.titleAboutUs h2 {
   font-size: 3rem;
   font-weight: 700;
   color: #c0c0c0;
 }
 
-.containerDescription h4{
+.containerDescription h4 {
   font-size: 18px;
   font-weight: 500;
   color: #9c9c9c;
 }
 
-.containerDescription p strong{
+.containerDescription p strong {
   font-size: 1.3rem;
   font-weight: 700;
   color: #c0c0c0;
 }
-.containerDescription p{
+.containerDescription p {
   font-size: 16px;
   font-weight: 500;
   color: #9c9c9c;
@@ -30,7 +30,7 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  border-left-color: #f1b90c;
+  border-left-color: #ffbb11;
   animation: spin 5s ease infinite;
   margin: auto;
 }
@@ -57,7 +57,7 @@
   height: 450px;
   margin: auto;
   border-radius: 50%;
-  border-left-color: #f1b90c;
+  border-left-color: #ffbb11;
   animation: spinCenter 5s ease infinite;
   
   margin: auto;

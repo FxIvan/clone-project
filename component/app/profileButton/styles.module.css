@@ -1,13 +1,13 @@
-.containerButton button{
-    background-color: transparent;
-    border-color: #f1b90c;
-    color: #f1b90c;
+.containerButton button {
+  background-color: transparent;
+  border-color: #ffbb11;
+  color: #ffbb11;
 }
-.containerButton button{
-    font-size: .85rem;
+.containerButton button {
+  font-size: 0.85rem;
 }
-.containerButton button:hover{
-    background-color: #f1b90c;
-    border-color: #f1b90c;
-    color: #ffffff;
+.containerButton button:hover {
+  background-color: #ffbb11;
+  border-color: #ffbb11;
+  color: #ffffff;
 }

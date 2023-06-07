@@ -11,13 +11,13 @@
 
 .buttonLearnMore {
   background-color: transparent;
-  border-color: #f1b90c;
-  color: #f1b90c;
+  border-color: #ffbb11;
+  color: #ffbb11;
 }
 
 .buttonLearnMore:hover {
-  background-color: #f1b90c;
-  border-color: #f1b90c;
+  background-color: #ffbb11;
+  border-color: #ffbb11;
   color: #ffffff;
   -webkit-box-shadow: 4px 3px 58px -7px rgba(252, 252, 252, 1);
   -moz-box-shadow: 4px 3px 58px -7px rgba(252, 252, 252, 1);

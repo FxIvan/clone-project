@@ -10,21 +10,14 @@ export default function TokenInfo({ token }) {
   const { query } = router;
   const { id } = query;
 
-  console.log("id", id);
-  console.log("token", token.token);
-
   return (
     <>
-    <div className={styles.backgroundImage}></div>
-      <Col className="text-center">
-      <DetailBanner
-        token={token.token}
-      />
-      </Col>
+      <Container fluid className="text-center bg-dark">
+        <DetailBanner token={token?.token} />
+      </Container>
     </>
   );
 }
-
 
 export const getServerSideProps = async ({ params }) => {
   const { id } = params;
@@ -42,7 +35,7 @@ export const getServerSideProps = async ({ params }) => {
     };
   } catch (error) {
     console.error("Error fetching token data:", error);
-    
+
     return {
       props: {
         token: null,

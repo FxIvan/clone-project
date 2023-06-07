@@ -9,7 +9,7 @@ LicenseInfo.setLicenseKey(process.env.NEXT_PUBLIC_MUI_PRO_LICENSE_KEY);
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <Layout className="bg-dark">
       <Component {...pageProps} />
     </Layout>
   );

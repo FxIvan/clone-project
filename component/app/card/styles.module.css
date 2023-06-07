@@ -113,23 +113,23 @@
   color: white;
 }
 .buttonrrss a:hover {
-  color: #f1b90c;
+  color: #ffbb11;
 }
 
 .opensInTBA button {
   background-color: rgb(240 185 19 / 26%);
-  color: #f1b90c;
+  color: #ffbb11;
   font-size: 12px;
-  border: #f1b90c;
+  border: #ffbb11;
   padding: 3px 10px 4px 10px;
   cursor: none !important;
 }
 
 .opensInTBA button:hover {
   background-color: rgb(240 185 19 / 26%);
-  color: #f1b90c;
+  color: #ffbb11;
   font-size: 12px;
-  border: #f1b90c;
+  border: #ffbb11;
   padding: 3px 10px 4px 10px;
 }
 
