@@ -21,7 +21,7 @@ export default function TokenInfo({ token }) {
 
 export const getServerSideProps = async ({ params }) => {
   const { id } = params;
-  const url = `http://localhost:6000/api/tokens/${id}`;
+  const url = `http://localhost:8000/api/tokens/${id}`;
   console.log("url", url);
   console.log("id", id);
   try {

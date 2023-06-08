@@ -37,7 +37,15 @@ const StakingPage = ({ tokens }) => {
                 tittle={token.name}
                 description={token.description}
                 participant={0}
-                projectStatus={token.token_status === "active" ? true : token.token_status === "coming_soon" ? true : token.token_status === "closed" ? false : true}
+                projectStatus={
+                  token.token_status === "active"
+                    ? true
+                    : token.token_status === "coming_soon"
+                    ? true
+                    : token.token_status === "closed"
+                    ? false
+                    : true
+                }
                 swapRate={token.ticker}
                 cap={token.ticker}
                 key={token.token_id}
@@ -51,11 +59,11 @@ const StakingPage = ({ tokens }) => {
 
   tokens.map((token) => {
     if (token.token_status === "active") {
-      activeTokens.push(token)
+      activeTokens.push(token);
     } else if (token.token_status === "coming_soon") {
-      comingSoonTokens.push(token)
+      comingSoonTokens.push(token);
     } else if (token.token_status === "closed") {
-      closedTokens.push(token)
+      closedTokens.push(token);
     }
   });
 
@@ -69,7 +77,7 @@ const StakingPage = ({ tokens }) => {
   );
 };
 export const getServerSideProps = async () => {
-  const res = (await axios.get("http://localhost:6000/api/tokens", { responseType: "json" })).data;
+  const res = (await axios.get("http://localhost:8000/api/tokens", { responseType: "json" })).data;
   const tokens = await res;
   return {
     props: {

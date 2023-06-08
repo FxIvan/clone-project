@@ -15,7 +15,7 @@ const AuthPage = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("/api/login", {
+      const res = await axios.put("/api/login", {
         username,
         password,
       });
@@ -24,8 +24,7 @@ const AuthPage = () => {
         secureLocalStorage.setItem("secretOrPrivateKey", res.data.secretOrPrivateKey);
         router.push("/admin");
       }
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   return (

@@ -70,7 +70,10 @@ export default function FullFeaturedCrudGrid({ tokens }) {
 
   const handleSaveClick = (id) => async () => {
     const editedRow = rows.find((row) => row.token_id === id);
-  
+
+    console.log("editedRow", editedRow);
+    console.log(rows);
+
     const {
       token_price,
       token_max_amount,
@@ -83,33 +86,29 @@ export default function FullFeaturedCrudGrid({ tokens }) {
       token_telegram,
       token_website,
     } = editedRow;
-  
-    const updatedData = {
-      token_price,
-      token_max_amount,
-      token_address,
-      ticker,
-      name,
-      description,
-      token_status,
-      token_twitter,
-      token_telegram,
-      token_website,
-    };
-  
-    console.log("updatedData", updatedData);
-  
+
     try {
-      const response = await axios.put(`http://localhost:6000/api/tokens/${id}`, JSON.stringify(updatedData), {
-        headers: {
-          "Content-Type": "application/json",
+      const response = await axios.put(
+        `http://localhost:8000/api/tokens/${id}`,
+        {
+          token_price,
+          token_max_amount,
+          token_address,
+          ticker,
+          name,
+          description,
+          token_status,
+          token_twitter,
+          token_telegram,
+          token_website,
         },
-      });
+        {
+          responseType: "json",
+        }
+      );
       // Handle the successful response
       console.log("Row updated successfully:", response.data);
       // Optionally, you can update the rows state with the updated data received from the server
-  
-      // Set the row mode to View mode
       setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
     } catch (error) {
       // Handle the error
@@ -117,7 +116,6 @@ export default function FullFeaturedCrudGrid({ tokens }) {
       // Optionally, you can display an error message to the user
     }
   };
-  
 
   const handleDeleteClick = (id) => () => {
     setRows(rows.filter((row) => row.token_id !== id));
@@ -136,6 +134,7 @@ export default function FullFeaturedCrudGrid({ tokens }) {
   };
 
   const processRowUpdate = (newRow) => {
+    console.log("newRow", newRow);
     const updatedRow = { ...newRow, isNew: false };
     setRows(rows.map((row) => (row.token_id === newRow.token_id ? updatedRow : row)));
     return updatedRow;
@@ -146,18 +145,76 @@ export default function FullFeaturedCrudGrid({ tokens }) {
   };
 
   const columns = [
-    { id:1 ,field: "token_id", headerName: "ID", width: 100, editable: false },
-    { id:2 ,field: "token_price", headerName: "Price", width: 100, editable: true, type: "number" },
-    { id:3 ,field: "token_max_amount", headerName: "Max Amount", width: 100, editable: true, type: "number" },
-    { id:4 ,field: "token_address", headerName: "Address", width: 100, editable: true, type: "string" },
-    { id:5 ,field: "ticker", headerName: "Ticker", width: 100, editable: true, type: "string" },
-    { id:6 ,field: "name", headerName: "Name", width: 100, editable: true, type: "string" },
-    { id:7 ,field: "description", headerName: "Description", width: 100, editable: true, type: "string" },
-    { id:8 ,field: "token_status", headerName: "Status", width: 100, editable: true, type: "string" },
-    { id:9 ,field: "token_twitter", headerName: "Twitter", width: 100, editable: true, type: "string" },
-    { id:10 ,field: "token_telegram", headerName: "Telegram", width: 100, editable: true, type: "string" },
-    { id:11 ,field: "token_website", headerName: "Website", width: 100, editable: true, type: "string" },
-    { id:12 ,field: "actions",
+    { id: 1, field: "token_id", headerName: "ID", width: 100, editable: false },
+    {
+      id: 2,
+      field: "token_price",
+      headerName: "Price",
+      width: 100,
+      editable: true,
+      type: "number",
+    },
+    {
+      id: 3,
+      field: "token_max_amount",
+      headerName: "Max Amount",
+      width: 100,
+      editable: true,
+      type: "number",
+    },
+    {
+      id: 4,
+      field: "token_address",
+      headerName: "Address",
+      width: 100,
+      editable: true,
+      type: "string",
+    },
+    { id: 5, field: "ticker", headerName: "Ticker", width: 100, editable: true, type: "string" },
+    { id: 6, field: "name", headerName: "Name", width: 100, editable: true, type: "string" },
+    {
+      id: 7,
+      field: "description",
+      headerName: "Description",
+      width: 100,
+      editable: true,
+      type: "string",
+    },
+    {
+      id: 8,
+      field: "token_status",
+      headerName: "Status",
+      width: 100,
+      editable: true,
+      type: "string",
+    },
+    {
+      id: 9,
+      field: "token_twitter",
+      headerName: "Twitter",
+      width: 100,
+      editable: true,
+      type: "string",
+    },
+    {
+      id: 10,
+      field: "token_telegram",
+      headerName: "Telegram",
+      width: 100,
+      editable: true,
+      type: "string",
+    },
+    {
+      id: 11,
+      field: "token_website",
+      headerName: "Website",
+      width: 100,
+      editable: true,
+      type: "string",
+    },
+    {
+      id: 12,
+      field: "actions",
       type: "actions",
       headerName: "Actions",
       width: 100,
@@ -167,7 +224,12 @@ export default function FullFeaturedCrudGrid({ tokens }) {
 
         if (isInEditMode) {
           return [
-            <GridActionsCellItem icon={<SaveIcon />} label="Save" onClick={handleSaveClick(id)} key={id} />,
+            <GridActionsCellItem
+              icon={<SaveIcon />}
+              label="Save"
+              onClick={handleSaveClick(id)}
+              key={id}
+            />,
             <GridActionsCellItem
               icon={<CancelIcon />}
               label="Cancel"
@@ -228,7 +290,7 @@ export default function FullFeaturedCrudGrid({ tokens }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = (await axios.get("http://localhost:6000/api/tokens", { responseType: "json" })).data;
+  const res = (await axios.get("http://localhost:8000/api/tokens", { responseType: "json" })).data;
   const tokens = await res;
   return {
     props: {

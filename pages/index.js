@@ -62,7 +62,7 @@ export default function Home({ tokens }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = (await axios.get("http://localhost:6000/api/tokens", { responseType: "json" })).data;
+  const res = (await axios.get("http://localhost:8000/api/tokens", { responseType: "json" })).data;
   const tokens = await res;
   return {
     props: {

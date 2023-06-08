@@ -4,7 +4,7 @@ import axios from "axios";
 export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
-      //const response = await axios.get("http://localhost:6000/api/tokens/", req.body);
+      //const response = await axios.get("http://localhost:8000/api/tokens/", req.body);
       //res.status(response.status).json(response.data);
       res.status(200).json({ message: "Hello" });
     } catch (error) {
