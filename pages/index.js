@@ -19,7 +19,7 @@ import TierCard from "/component/app/tierCard";
 
 export default function Home({ tokens }) {
   return (
-    <Container fluid className="p-0 mb-5 bg-dark">
+    <Container fluid className="p-0 bg-dark pb-5">
       <Container className={styles.containerLanding + ""}>
         <div className="d-sm-none d-md-block d-md-none d-lg-block d-none d-sm-block d-lg-none d-xl-block">
           <HomeBanner />
@@ -27,7 +27,7 @@ export default function Home({ tokens }) {
           <ProfileButton />
           {/* <OurPartners /> */}
           <Container>
-            <Row className={styles.titleRound + " text-center mt-5 mb-3"}>
+            <Row className={styles.titleRound + " text-center"}>
               <h2 className={styles.textBf}>PROJECTS</h2>
             </Row>
             <Row className={"d-flex justify-content-between"}>

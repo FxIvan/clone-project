@@ -20,7 +20,7 @@ export default function NavBar() {
         fluid
         className="d-sm-none d-md-block d-md-none d-lg-block d-none d-sm-block d-lg-none d-xl-block bg-dark w-100"
       >
-        <Row className="py-5">
+        <Row className="py-2">
           <Col xxl={5} lg={4} className="d-flex justify-content-start">
             <div className={styles.logo + " d-flex align-items-center"}>
               <Link href="/" className={styles.redirectPrincipal}>

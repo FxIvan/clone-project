@@ -47,7 +47,6 @@
 }
 
 .iconBox {
-  margin: auto;
   width: 90px;
   height: 90px;
   position: relative;
@@ -128,6 +127,8 @@
   margin: 0 auto;
   max-width: 800px;
   margin-bottom: 3rem;
+  padding: 1rem;
+  padding-top: 2rem;
 }
 
 .containerProgressBar {

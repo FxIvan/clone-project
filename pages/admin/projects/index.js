@@ -75,6 +75,10 @@ export default function FullFeaturedCrudGrid({ tokens }) {
 
   const handleDeleteClick = (id) => () => {
     setRows(rows.filter((row) => row.token_id !== id));
+    //delete the token from the database
+    // SET API delete token
+    const response = axios.delete(`http://localhost:8000/api/tokens/${id}`);
+    console.log(response);
   };
 
   const handleCancelClick = (id) => () => {
@@ -95,6 +99,46 @@ export default function FullFeaturedCrudGrid({ tokens }) {
       console.log("newRow", newRow);
       const updatedRow = { ...newRow, isNew: false };
       const id = updatedRow.token_id;
+      console.log("id", id);
+
+      if(id === tokens.length + 1) {
+        // SET API create token
+        console.log(id)
+        const {
+          token_price,
+          token_max_amount,
+          token_address,
+          ticker,
+          name,
+          description,
+          token_status,
+          token_twitter,
+          token_telegram,
+          token_website,
+        } = newRow;
+        const token_id = id;
+        const response = await axios.post(
+          `http://localhost:8000/api/tokens`,
+          newRow,token_id,{
+            token_price,
+            token_max_amount,
+            token_address,
+            ticker,
+            name,
+            description,
+            token_status,
+            token_twitter,
+            token_telegram,
+            token_website,
+          },
+          {
+            responseType: "json",
+          }
+        );
+        // Handle the successful response
+        console.log("Row created successfully:", response.data);
+      }
+
 
       setRows(rows.map((row) => (row.token_id === newRow.token_id ? updatedRow : row)));
 

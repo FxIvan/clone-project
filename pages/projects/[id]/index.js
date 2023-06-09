@@ -12,7 +12,7 @@ export default function TokenInfo({ token }) {
 
   return (
     <>
-      <Container fluid className="text-center bg-dark">
+      <Container fluid className="text-center bg-dark m-0">
         <DetailBanner token={token?.token} />
       </Container>
     </>
