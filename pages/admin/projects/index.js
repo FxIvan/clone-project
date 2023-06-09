@@ -18,6 +18,7 @@ import {
 export default function FullFeaturedCrudGrid({ tokens }) {
   const [rows, setRows] = React.useState(tokens);
   const [rowModesModel, setRowModesModel] = React.useState({});
+  const [rowUpdated, setRowUpdated] = React.useState(false);
 
   function EditToolbar(props) {
     const { setRows, setRowModesModel } = props;
@@ -69,25 +70,47 @@ export default function FullFeaturedCrudGrid({ tokens }) {
   };
 
   const handleSaveClick = (id) => async () => {
-    const editedRow = rows.find((row) => row.token_id === id);
+    setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
+  };
 
-    console.log("editedRow", editedRow);
-    console.log(rows);
+  const handleDeleteClick = (id) => () => {
+    setRows(rows.filter((row) => row.token_id !== id));
+  };
 
-    const {
-      token_price,
-      token_max_amount,
-      token_address,
-      ticker,
-      name,
-      description,
-      token_status,
-      token_twitter,
-      token_telegram,
-      token_website,
-    } = editedRow;
+  const handleCancelClick = (id) => () => {
+    setRowModesModel({
+      ...rowModesModel,
+      [id]: { mode: GridRowModes.View, ignoreModifications: true },
+    });
 
+    const editedRow = rows.find((row) => row.id === id);
+    if (editedRow.isNew) {
+      setRows(rows.filter((row) => row.id !== id));
+    }
+  };
+
+  const processRowUpdate = async (newRow) => {
     try {
+      console.log("processRowUpdate", newRow);
+      console.log("newRow", newRow);
+      const updatedRow = { ...newRow, isNew: false };
+      const id = updatedRow.token_id;
+
+      setRows(rows.map((row) => (row.token_id === newRow.token_id ? updatedRow : row)));
+
+      const {
+        token_price,
+        token_max_amount,
+        token_address,
+        ticker,
+        name,
+        description,
+        token_status,
+        token_twitter,
+        token_telegram,
+        token_website,
+      } = newRow;
+
       const response = await axios.put(
         `http://localhost:8000/api/tokens/${id}`,
         {
@@ -109,34 +132,10 @@ export default function FullFeaturedCrudGrid({ tokens }) {
       // Handle the successful response
       console.log("Row updated successfully:", response.data);
       // Optionally, you can update the rows state with the updated data received from the server
-      setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
     } catch (error) {
-      // Handle the error
-      console.error("Error updating row:", error);
-      // Optionally, you can display an error message to the user
+      console.log("Error updating row:", error);
+      throw error;
     }
-  };
-
-  const handleDeleteClick = (id) => () => {
-    setRows(rows.filter((row) => row.token_id !== id));
-  };
-
-  const handleCancelClick = (id) => () => {
-    setRowModesModel({
-      ...rowModesModel,
-      [id]: { mode: GridRowModes.View, ignoreModifications: true },
-    });
-
-    const editedRow = rows.find((row) => row.id === id);
-    if (editedRow.isNew) {
-      setRows(rows.filter((row) => row.id !== id));
-    }
-  };
-
-  const processRowUpdate = (newRow) => {
-    console.log("newRow", newRow);
-    const updatedRow = { ...newRow, isNew: false };
-    setRows(rows.map((row) => (row.token_id === newRow.token_id ? updatedRow : row)));
     return updatedRow;
   };
 
@@ -222,6 +221,7 @@ export default function FullFeaturedCrudGrid({ tokens }) {
       getActions: ({ id }) => {
         const isInEditMode = rowModesModel[id]?.mode === GridRowModes.Edit;
 
+        /* Editing */
         if (isInEditMode) {
           return [
             <GridActionsCellItem
@@ -241,6 +241,7 @@ export default function FullFeaturedCrudGrid({ tokens }) {
           ];
         }
 
+        /* Not Editing */
         return [
           <GridActionsCellItem
             icon={<EditIcon />}
