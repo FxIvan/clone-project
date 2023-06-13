@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import icon2 from "../../../public/image/landing/iconbox2.jpg";
 import styles from "./styles.module.css";
+import { CldImage } from 'next-cloudinary';
 
 export default function DetailBanner({ token }) {
   console.log("token banner", token.token_status);
@@ -73,7 +74,10 @@ export default function DetailBanner({ token }) {
             <Col sm={4} className="d-flex align-items-start my-4">
               <div className={styles.iconBox+ ""}>
                 <span className="d-flex align-items-start">
-                  <Image src={icon2} />
+                <CldImage
+                  width="600"
+                  height="600"
+                  src="d93d701c15a8b3fba2d8483c24f2c14d"></CldImage>
                 </span>
               </div>
             </Col>

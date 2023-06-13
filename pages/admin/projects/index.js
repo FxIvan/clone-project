@@ -1,5 +1,7 @@
-import * as React from "react";
+import React, { useState,  useEffect, } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useRouter } from "next/router";
+
 
 import axios from "axios";
 import Button from "@mui/material/Button";
@@ -16,9 +18,26 @@ import {
 } from "@mui/x-data-grid-pro";
 
 export default function FullFeaturedCrudGrid({ tokens }) {
+  const router = useRouter();
+
   const [rows, setRows] = React.useState(tokens);
   const [rowModesModel, setRowModesModel] = React.useState({});
   const [rowUpdated, setRowUpdated] = React.useState(false);
+
+  useEffect(async() => {
+    try {
+      const token = secureLocalStorage.getItem("token");
+
+      if (token) {
+        router.push("/admin");
+      } else {
+        router.push("/login");
+      }
+    } catch (error) {
+      router.push("/auth");
+    }
+  }, []
+  )
 
   function EditToolbar(props) {
     const { setRows, setRowModesModel } = props;

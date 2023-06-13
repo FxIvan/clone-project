@@ -15,13 +15,13 @@ const AuthPage = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.put("/api/login", {
+      const res = await axios.post("/api/login", {
         username,
         password,
       });
 
       if (res.status === 200) {
-        secureLocalStorage.setItem("secretOrPrivateKey", res.data.secretOrPrivateKey);
+        secureLocalStorage.setItem("token", res.data.token);
         router.push("/admin");
       }
     } catch (error) {}
